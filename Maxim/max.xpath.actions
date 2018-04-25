@@ -1,0 +1,28 @@
+[
+  {
+    "prob": 1,
+    "activity":"com.github.android_app_bootstrap.activity.LoginActivity",
+    "actions": [
+      {
+        "xpath": "//*[@resource-id='com.github.android_app_bootstrap:id/mobileNoEditText']",
+        "action": "INPUTTEXT",
+        "text": "13810751000",
+        "index": 0,
+        "throttle": 100
+      },
+      {
+        "xpath": "//*[@resource-id='com.github.android_app_bootstrap:id/codeEditText']",
+        "action": "INPUTTEXT",
+        "text": "8888888",
+        "index": 0,
+        "throttle": 100
+      },
+      {
+        "xpath": "//*[@resource-id='com.github.android_app_bootstrap:id/login_button']",
+        "action": "CLICK",
+        "index": 0,
+        "throttle": 100
+      }
+    ]
+  }
+]
