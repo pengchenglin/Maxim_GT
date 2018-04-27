@@ -22,9 +22,9 @@ class Maxim(object):
         '''
         self.clear_env()
         self.push_jar()
-        if 'awl.strings' in monkey_shell:
+        if monkey_shell.find('awl.strings'):
             self.push_white_list()
-        if 'uiautomatortroy' in monkey_shell:
+        if monkey_shell.find('uiautomatortroy'):
             self.push_selector()
         if actions:
             self.push_actions()

@@ -1,3 +1,1 @@
 [Maxim] *** ERROR // : the top activity package com.tencent.wstt.gt is invalid.
-[Maxim] *** ERROR // : the top activity package com.tencent.wstt.gt is invalid.
-[Maxim] *** ERROR // : the top activity package com.tencent.wstt.gt is invalid.
