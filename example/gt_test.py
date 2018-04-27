@@ -13,7 +13,7 @@ GT().start_test('com.quvideo.xiaoying')
 # monkey_shell ='CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.quvideo.xiaoying --running-minutes 20 --uiautomatormix --throttle 100 -v -v >/sdcard/monkeyout.txt 2>/sdcard/monkeyerr.txt &'
 # 运行monkey
 
-command = Maxim().command(package='com.quvideo.xiaoying', runtime=50, mode='uiautomatormix', whitelist=True, throttle=500)
+command = Maxim().command(package='com.quvideo.xiaoying', runtime=2, mode='uiautomatordfs', whitelist=True, throttle=500,off_line=False)
 print(command)
 Maxim().run_monkey(command)
 

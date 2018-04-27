@@ -73,5 +73,6 @@ com.quvideo.xiaoying.template.filter.FilterActivity
 com.quvideo.xiaoying.template.filter.FilterDetailActivity
 com.quvideo.xiaoying.template.manager.TemplateMgrActivity
 com.quvideo.xiaoying.template.pack.TemplatePackActivity
+com.android.packageinstaller.permission.ui.GrantPermissionsActivity
 
 

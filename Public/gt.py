@@ -22,11 +22,11 @@ class GT(object):
         # self._package_name = package_name
         broadcast = self._broadcast
         # 1. start app
-        self.clean_data()  # clean old data
-
+        cmd.unlock_devices()
         logger.info('Stopping all running app')
         cmd.app_stop_all()
 
+        self.clean_data()  # clean old data
         logger.info('Starting GT Test')
         cmd.app_start('com.tencent.wstt.gt')     # 'com.tencent.wstt.gt.activity.GTMainActivity')
 
@@ -56,9 +56,9 @@ class GT(object):
         self._broadcast('com.tencent.wstt.gt.baseCommand.endTest')
         self.quit()
         self.backup_data()
-        logger.info('Testing finished>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        logger.info('GT testing finished>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         cmd.app_stop_all()
-        logger.error('Please Export data.js manuall')
+        logger.info('Please Export data.js manually')
 
 
     def backup_data(self):
@@ -71,7 +71,8 @@ class GT(object):
         '''清除GTR文件'''
         # self._broadcast('com.tencent.wstt.gt.baseCommand.clearData')
         cmd.adb_shell('rm -r sdcard/GTR')
-        logger.info('Clearing GTR file')
+        cmd.adb_shell('rm -r sdcard/GTRData/data.js')
+        logger.info('Clearing GTR file and data.js')
 
     def quit(self):
         '''结束GT并退出'''
@@ -79,11 +80,7 @@ class GT(object):
         cmd.app_stop('com.tencent.wstt.gt')
         logger.info('Exiting GT and stop GT App')
 
-    # def pull_js(self, dst='../GT_Report/data/data.js'):
-    #     '''将手机内的data.js复制到电脑'''
-    #     logger.info('Starting to pull data.js to %s ' % dst)
-    #     self.pull('/sdcard/GTRData/data.js', dst)
-    #     logger.info('Pull data.js success')
+
 
 
 

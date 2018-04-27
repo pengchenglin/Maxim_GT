@@ -4,18 +4,15 @@
 import os
 import re
 from subprocess import list2cmdline
+import time
 
 
 def adb_shell(*args):
     """
-            Example:
-                adb_shell('pwd')
-                adb_shell('ls', '-l')
-                adb_shell('ls -l')
-
-            Returns:
-                a UTF-8 encoded string for stdout merged with stderr, after the entire shell command is completed.
-            """
+    Example:
+        adb_shell('pwd')
+        adb_shell('ls', '-l')
+    """
     cmdline = args[0] if len(args) == 1 else list2cmdline(args)
     p = os.popen(' '.join(['adb shell ', cmdline]))
     return p.read()
@@ -52,8 +49,8 @@ def app_start(pkg_name, activity=None, extras={}, wait=True, stop=False, unlock=
         activity (str): app activity
         stop (str): Stop app before starting the activity. (require activity)
     """
-    # if unlock:
-    #     self.unlock()
+    if unlock:
+        unlock_devices()
 
     if activity:
         # -D: enable debugging
@@ -89,14 +86,31 @@ def app_start(pkg_name, activity=None, extras={}, wait=True, stop=False, unlock=
 
 def pull(src, dst):
     dst = os.path.abspath(dst)
-    # print(' '.join(['adb pull ', src, dst]))
-    os.popen(' '.join(['adb pull ', src, dst]))
+    a = os.popen(' '.join(['adb pull ', src, dst]))
+    return a.read()
 
 
 def push(src, dst):
     src = os.path.abspath(src)
-    # print(' '.join(['adb push ', src, dst]))
-    os.popen(' '.join(['adb push ', src, dst]))
+    a = os.popen(' '.join(['adb push ', src, dst]))
+    return a.read()
 
-if __name__ == '__main__':
-    pull('/sdcard/monkey.jar','../')
+
+def install_apk(apk_path):
+    apk_path = os.path.abspath(apk_path)
+    a = os.popen(' '.join(['adb install -r', apk_path]))
+    return a.read()
+
+
+def unlock_devices():
+    '''../apk/unlock.apk install and launch'''
+    pkgs = re.findall('package:([^\s]+)', adb_shell('pm', 'list', 'packages', '-3'))
+    if 'io.appium.unlock' in pkgs:
+        app_start('io.appium.unlock')
+        adb_shell('input keyevent 3')
+    else:
+        if 'Success' in install_apk('../apk/unlock.apk'):
+            app_start('io.appium.unlock')
+            adb_shell('input keyevent 3')
+
+
