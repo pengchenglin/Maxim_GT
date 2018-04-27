@@ -146,6 +146,4 @@ class Maxim(object):
         self.push_string()
 
 
-if __name__ == '__main__':
-    Maxim().set_AdbIME()
-    Maxim().clear_env()
+

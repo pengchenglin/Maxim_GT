@@ -9,10 +9,10 @@ from Public.Maxim_monkey import Maxim
 
 # 开始GT
 # cmd.install_apk('../apk/xiaoying_GTsdk.apk')
-GT().start_test('com.quvideo.xiaoying')
+GT().start_test('com.gtr.sdkdemo')
 
 # 运行monkey
-command = Maxim().command(package='com.quvideo.xiaoying', runtime=40, mode='uiautomatordfs', throttle=800, options=' -v -v ')
+command = Maxim().command(package='com.gtr.sdkdemo', runtime=5, mode='uiautomatordfs', throttle=800, options=' -v -v ')
 print(command)
 Maxim().run_monkey(command)
 #
