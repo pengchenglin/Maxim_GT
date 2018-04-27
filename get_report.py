@@ -7,7 +7,7 @@ import zipfile
 import os
 
 
-def pull_js(dst='../GT_Report/data/data.js'):
+def pull_js(dst='./GT_Report/data/data.js'):
     '''将手机内的data.js复制到电脑'''
     if 'data' in cmd.adb_shell('ls /sdcard/GTRData/'):
         logger.info('Starting to pull data.js to %s ' % os.path.abspath(dst))
@@ -21,8 +21,8 @@ def pull_js(dst='../GT_Report/data/data.js'):
 
 def pull_monkeylog():
     if 'monkeyerr.txt' in cmd.adb_shell('ls /sdcard/') and 'monkeyout.txt' in cmd.adb_shell('ls /sdcard/'):
-        cmd.pull('/sdcard/monkeyerr.txt', '../GT_Report/monkeyerr.txt')
-        cmd.pull('/sdcard/monkeyout.txt', '../GT_Report/monkeyout.txt')
+        cmd.pull('/sdcard/monkeyerr.txt', './GT_Report/monkeyerr.txt')
+        cmd.pull('/sdcard/monkeyout.txt', './GT_Report/monkeyout.txt')
         logger.info('pull monkeyerr.txt  monkeyout.txt  ---> /GT_Report/')
         return True
     else:
@@ -31,8 +31,8 @@ def pull_monkeylog():
 
 
 def zip_report(name):
-    startdir = "../GT_Report"  # 要压缩的文件夹路径
-    file_news = '../'+ name + '.zip'  # 压缩后文件夹的名字
+    startdir = "./GT_Report"  # 要压缩的文件夹路径
+    file_news = './'+ name + '.zip'  # 压缩后文件夹的名字
     z = zipfile.ZipFile(file_news, 'w', zipfile.ZIP_DEFLATED)  # 参数一：文件夹名
     for dirpath, dirnames, filenames in os.walk(startdir):
         fpath = dirpath.replace(startdir, '')  # 这一句很重要，不replace的话，就从根目录开始复制
