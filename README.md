@@ -49,7 +49,7 @@
 
 2、等待执行完成后，打开手机的GT App 导出数据 ，选择指定的文件夹
 
-3、导出成功过后，执行`get_report.py`或者直接运行`get_repor.bat`
+3、导出成功过后，执行`get_report.py`或者直接运行`get_repor.bat` 会将手机内的data.js和monkey运行的log文件拷贝到GT_report文件下，并自动打包生成zip文件
 
 
 
