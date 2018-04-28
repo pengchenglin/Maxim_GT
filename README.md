@@ -13,7 +13,7 @@
 
 *-Public*		
 
-  ​	*command.py*       		adb_shell相关的命令方法
+  	*command.py*       		adb_shell相关的命令方法
 
   ​	*gt.py*			   	GT通过广播方式实现性能的采集
 
@@ -55,7 +55,7 @@
 
 
 
-​	
+
 
 
 
