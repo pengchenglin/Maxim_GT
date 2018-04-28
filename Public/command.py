@@ -114,5 +114,3 @@ def unlock_devices():
             adb_shell('input keyevent 3')
 
 
-if __name__ == '__main__':
-    print(adb_shell('ls'))
