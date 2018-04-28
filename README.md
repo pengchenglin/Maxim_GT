@@ -43,8 +43,10 @@
 
 #### **操作说明**
 
-**注意**：手机安装好GT App    被测app需要集成GT SDk才能采集到数据！！！！  可以用apk/GTdemo.apk 做演示
-          只能单机连接到PC执行操作，否则adb_shell会出错
+**注意**：
+- 手机提前安装好GT App，并同意系统权限    
+- 被测app需要集成GT SDk才能采集到数据！！！！  可以用apk/GTdemo.apk 做演示
+- 只能单机连接到PC执行操作，否则adb_shell会出错
 
 1、编辑`example/Run_monkey.py`修改被测试app的包名后，直接运行`Run_monkey.py`或者Windows直接执行`run.bat`      *Maxim().command*的相关参数设置 请参照*Maxim_monkey.py*中的注释
 
