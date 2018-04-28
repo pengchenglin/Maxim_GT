@@ -30,6 +30,7 @@ class GT(object):
         logger.info('Starting GT Test')
         cmd.app_start('com.tencent.wstt.gt')     # 'com.tencent.wstt.gt.activity.GTMainActivity')
 
+        time.sleep(4)
         # 2. set test package name
         broadcast('com.tencent.wstt.gt.baseCommand.startTest', '--es', 'pkgName', package_name)
         # 3. set collect params
@@ -47,8 +48,8 @@ class GT(object):
             broadcast('com.tencent.wstt.gt.baseCommand.sampleData', '--ei', 'fps', '1')
 
         # 4. switch back to app
-        logger.info('GT Setup already, starting GT test......')
-        time.sleep(3)
+        logger.info('GT Setup already, starting GT test...................')
+        time.sleep(2)
         # self.app_start(package_name)
 
     def stop_test(self):
