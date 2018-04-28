@@ -13,31 +13,31 @@
 
 *-Public*		
 
-​	*command.py*       		adb_shell相关的命令方法
+  ​	*command.py*       		adb_shell相关的命令方法
 
-​	*gt.py*			   	GT通过广播方式实现性能的采集
+  ​	*gt.py*			   	GT通过广播方式实现性能的采集
 
-​	*Maxim_monkey.py*	    	Maxim fast monkey的一些功能配置
+  ​	*Maxim_monkey.py*	    	Maxim fast monkey的一些功能配置
 
 *-Maxim*  		（maxim的一些配置文件）
 
-​	*awl.strings*：			存放activity白名单
+  ​	*awl.strings*：			存放activity白名单
 
-​	*max.xpath.actions*：	特殊事件序列 
+  ​	*max.xpath.actions*：	特殊事件序列 
 
-​	*max.xpath.selecto*r：	TROY模式（支持特殊事件、黑控件等） 配置 
+  ​	*max.xpath.selecto*r：	TROY模式（支持特殊事件、黑控件等） 配置 
 
-​	*max.xpath.selector*：	 troy控件选择子来定制自有的控件选择优先级
+  ​	*max.xpath.selector*：	 troy控件选择子来定制自有的控件选择优先级
 
-​	*max.widget.black*：	黑控件 黑区域屏蔽
+  ​	*max.widget.black*：	黑控件 黑区域屏蔽
 
-​	*max.strings* ：		随机输入字符，内容可自定义配置
+  ​	*max.strings* ：		随机输入字符，内容可自定义配置
 
 *-GT-Report*	（GThtml报告的模板，替换data/data.js即可）
 
-*-example*		（自动化执行脚本，Run_monkey.py）
+  *-example*		（自动化执行脚本，Run_monkey.py）
 
-*-apk*		        （存放一些必须的apk）
+  *-apk*		        （存放一些必须的apk）
 
 
 
